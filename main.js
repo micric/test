@@ -89,7 +89,7 @@ class Game{
         // model
         const self = this;
         const loader = new THREE.FBXLoader();
-        loader.load( 'Soldier0.fbx', function ( object ) {
+        loader.load( 'model/Soldier0.fbx', function ( object ) {
             self.mixer = new THREE.AnimationMixer( object );
             self.actions = object.animations;
             self.mixer.addEventListener( 'finished', function( ) {
@@ -219,7 +219,7 @@ class Game{
             var arr = [];
             for (var index2= 0; index2< (this.animations[index1]).length; index2++) {
                 var anim = this.animations[index1][index2];
-                loader.load( `${anim}.fbx`, function ( object ) {
+                loader.load( `model/${anim}.fbx`, function ( object ) {
 
                     const action = self.mixer.clipAction( object.animations[0] );
                     arr.push(action);
